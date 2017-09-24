@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'DinReg';
+  src: ('dinReg.otf'); 
+
+}
+
+@font-face {
+  font-family: 'DinLight';
+  src: url('dinLight.otf'); 
+
+}
+
+@font-face {
+  font-family: 'DinLightItalic';
+  src: url('dinLight_Italic.otf'); 
+
+}
+
+@font-face {
+  font-family: 'DinItalic';
+  src: url('dinItalic.otf'); 
+
+}
+
+@font-face {
+  font-family: 'DinExtraLight';
+  src: url('dinExLight.otf'); 
+
+}
+
+@font-face {
+  font-family: 'DinExtraLightItalic';
+  src: url('dinExLight_Italic.otf'); 
+
+}
+
+@font-face {
+  font-family: 'DinExBold';
+  src: url('dinExBold.otf'); 
+
+}
+
+@font-face {
+  font-family: 'DinExBoldItalic';
+  src: url('dinExBold_Italic.otf'); 
+
+}
+
+@font-face {
+  font-family: 'DinDemiBold';
+  src: url('dinDemi.otf'); 
+
+}
+
+@font-face {
+  font-family: 'DinBold';
+  src: url('dinBold.otf'); 
+
+}
+
+@font-face {
+  font-family: 'DinBoldItalic';
+  src: url('dinBold_Italic.otf'); 
+
+}

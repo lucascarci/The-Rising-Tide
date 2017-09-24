@@ -1,0 +1,120 @@
+<html>
+
+<head>
+    <title>Luca Scarci - Climate Change</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="fonts/din/fontface.css">
+    <!--Load in Custom fonts-->
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding 0;
+        }
+    </style>
+
+</head>
+
+<script src="js/three.min.js"></script>
+<script src="js/Detector.js"></script>
+<script src="js/ColladaLoader.js"></script>
+<script src="js/tween.min.js"></script>
+
+
+<body>
+
+    <container id="preloader">
+
+<div class="preLoadContain">
+        <div id="loading">
+            <!--            <div id="loadme">LOADING</div>-->
+            <div id="loader"></div>
+        </div>
+        <div id="welcome">
+            <div id="title">THE RISING TIDE</div>
+        </div>
+        
+        
+        <div id="beginRender">
+            <button id="begin" onclick="preload(); launchBlank();">BEGIN</button>
+        </div>
+        
+ </div>       
+    </container>
+
+    <div id="mainInterface">
+        
+        <div id="listofThings">
+            <div class="subtitle">WELCOME</div>
+         <div id="body">
+                <p>The Rising Tide is a Climate Change Interactive Experience. There are many people who disbelieve that Earth's Climate is being altered—even though it is factually proven true.</p>
+             <p>Carbon dioxide (CO2) is an important heat-trapping (greenhouse) gas, which is released through human activities such as deforestation and burning fossil fuels, as well as natural processes such as respiration and volcanic eruptions.</p>
+                <p>The Level of Carbon Dioxide in the air is measured in Parts per Million. The Earth should stay at 350ppm(parts per million). December 2016, it was recorded at an all time high of 404ppm. </p>
+               
+            </div>
+             <button class="buttonStyle1" id="dismiss" onclick="dismiss(); interface(); launchCity(); showPanel();">CONTINUE</button>
+        </div>
+    
+    <div id="mainContent">
+        
+            <div id="currentStats">CURRENT WORLD STATS</div>
+            <div class="elements">Sea Level Rise<p id="stat1" class="stats">0.3ft</p></div>
+            <div class="elements">Global Temp.<p id="stat2" class="stats">0.87°C</p></div>
+            <div class="elements">CO2/ppm<p id="stat3" class="stats">404.5</p></div>
+            <div class="elements">Population<p id="stat4" class="stats">7.3B</p></div>
+        
+               <hr class="line2">
+<!--               <hr class="line">-->
+
+        
+            <div class="elements3"  id="evidence" onclick="launchCity(); evidence();">EVIDENCE</div>
+            <div class="elements3"  id="causes" onclick="launchFossil(); causes();">CAUSES</div>
+            <div class="elements3"  id="effects" onclick="launchAftermath(); effects();">EFFECTS</div>
+            <div class="elements3"  id="solutions" onclick="launchWind(); solutions();">SOLUTIONS</div>
+            <div class="elements3"  id="toTheFuture" onclick="space();">SPACE</div>
+            <div class="elements3"  id="whatIf" onclick="seeDrought();">WHAT IF</div>
+
+            </div>
+
+        </div>
+        
+        
+         
+        
+          <div id="mainContentTop">
+            <div class="elements2" id="date">December 2016</div>
+              
+            
+        
+        </div>
+        
+        
+        <div id="panel">
+            <div id="subtitlePanel">THE EVIDENCE</div>
+            
+            <p class ="textbox" id="textbox1">The Earth's climate has changed throughout history. Most of these climate changes are attributed to very small variations in Earth’s orbit that change the amount of solar energy our planet receives.</p>
+            <p class ="textbox" id="textbox2">The current warming trend is of particular significance, because it is human-induced. And proceeding at a rate that is unusual in the past 1,300 years.</p>
+            
+            <p class ="textbox" id="textbox3"></p>
+            
+            <button class="buttonStyle3" id="causesButton" onclick="launchFossil(); causes();">SEE CAUSES</button>
+            <button class="buttonStyle3" id="effectsButton" onclick="launchAftermath(); effects();">SEE EFFECTS</button>
+            <button class="buttonStyle3" id="solutionButton" onclick="launchWind(); solutions();">SEE SOLUTIONS</button>
+ <button class="buttonStyle3" id="whatIf2" onclick="seeDrought();">AND IF WE DONT STOP CLIMATE CHANGE?</button>
+ 
+            
+    
+ 
+
+
+        
+        
+    </div>
+    
+    
+    <script src="js/javascript.js"></script>
+
+</body>
+
+</html>
