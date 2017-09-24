@@ -105,28 +105,11 @@ function init() { //initialize function
         
         orangeCar = dae.children[0].children[8];
         ocean = dae.children[0].children[0];
-        iceberg = dae.children[0].children[256];
+        iceberg = dae.children[0].children[242];
         cargoShip = dae.children[12];
         ocean.position.y = -13;
 
-        
-        
-            var icePos = new TWEEN.Tween(iceberg.position).to({
-            y: -25
-        }, 50000);
-        
-            icePos.start();
 
-        
-//            var cargPos = new TWEEN.Tween(cargoShip.position).to({
-//            z: 20,
-//            x: -40
-//        }, 18000);
-//        
-//            cargPos.start();
-            
-          var farm = scene.getObjectByName('farmland', true); 
-            // console.log(farm);
 
         //moving objects
         // var pos1 = new TWEEN.Tween(orangeCar.position).to({
@@ -404,11 +387,11 @@ function launchFossil() { //camera moves to fossil fuel island
     document.getElementById('causesButton').style.visibility= 'hidden';
 
         var cargoPos = new TWEEN.Tween(cargoShip.position).to({
-            z: -90,
-            x: -104.6
-        }, 32000);
+            z: 10,
+            x:-10,
+        }, 10000)
         cargoPos.start();
-    // console.log(cargoShip);
+    console.log(cargoShip);
     
 
     pos1.start(); //initiates camera tween for position
@@ -418,6 +401,8 @@ function launchFossil() { //camera moves to fossil fuel island
 
 function launchCity() { //launch camera function to move in on city.
 
+    orangeCar.position.x = -21;
+
     var pos1 = new TWEEN.Tween(camera.position).to({
         x: 140,
         z: -10
@@ -425,10 +410,14 @@ function launchCity() { //launch camera function to move in on city.
     pos1.start(); //initiates camera tween for position
 
     var posCar = new TWEEN.Tween(orangeCar.position).to({
-            z: -95,
+            z: -91,
             x: -104.6
-        }, 32000);
+        }, 25000);
     posCar.start();
+
+
+    console.log(orangeCar);
+
 
 
 }
@@ -440,6 +429,8 @@ function launchBlank() { //exact start point before moving in on city
         z: 0
     }, 100).easing(TWEEN.Easing.Quadratic.InOut); //ease in and out of tween
     pos1.start(); //initiates camera tween for position
+    console.log(ocean);
+
 
 
 
@@ -453,6 +444,25 @@ function launchAftermath() {//camera moves to iceberg melting and sea levels ris
         z: -80
     }, 2000).easing(TWEEN.Easing.Quadratic.InOut); //ease in and out of tween
     document.getElementById('effectsButton').style.visibility= 'hidden';
+
+    var cargoPos = new TWEEN.Tween(cargoShip.position).to({
+        z: 91,
+        x:-90,
+        y: 1.4,
+    }, 25000)
+    cargoPos.start();
+    console.log(iceberg);
+
+    var ice = new TWEEN.Tween(iceberg.position).to({
+        y: -40,
+    }, 20000)
+    ice.start();
+
+    var water = new TWEEN.Tween(ocean.position).to({
+        y: -8,
+    }, 15000)
+    water.start();
+
 
 
     pos1.start(); //initiates camera tween for position
@@ -472,6 +482,18 @@ function launchWind() { //camera moves to energy efficient island.
     pos1.start(); //initiates camera tween for position
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 function seeDrought() {//camera moves to farm
        var pos1 = new TWEEN.Tween(camera.position).to({
