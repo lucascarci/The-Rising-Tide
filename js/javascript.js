@@ -1,5 +1,9 @@
 var scene, camera, controls, renderer, object, raycaster; //declaring global variables
 
+var iceberg;
+var cargoShip;
+var ocean;
+var orangeCar;
 var audio = new Audio('aliveandkicking.mp3');
 
 
@@ -99,10 +103,10 @@ function init() { //initialize function
         
         
         
-        var orangeCar = dae.children[0].children[8];
-        var ocean = dae.children[0].children[0];
-        var iceberg = dae.children[0].children[256];
-        var cargoShip = dae.children[12]
+        orangeCar = dae.children[0].children[8];
+        ocean = dae.children[0].children[0];
+        iceberg = dae.children[0].children[256];
+        cargoShip = dae.children[12];
         ocean.position.y = -13;
 
         
@@ -122,16 +126,16 @@ function init() { //initialize function
 //            cargPos.start();
             
           var farm = scene.getObjectByName('farmland', true); 
-            console.log(farm);
+            // console.log(farm);
 
         //moving objects
-        var pos1 = new TWEEN.Tween(orangeCar.position).to({
-            z: -90,
-            x: -104.6
-        }, 16000);
+        // var pos1 = new TWEEN.Tween(orangeCar.position).to({
+        //     z: -90,
+        //     x: -104.6
+        // }, 16000);
         //                .
 
-        pos1.start(); //initiates camera tween for position
+        // pos1.start(); //initiates camera tween for position
         
         
     });
@@ -283,6 +287,8 @@ function showPanel() {
     }
 }
 
+
+
 function evidence() {
     var causesNav = document.getElementById("evidence");
     var titleSwap = document.getElementById('subtitlePanel');
@@ -296,9 +302,8 @@ function evidence() {
     document.getElementById('stat1').innerHTML = '0.3ft';
     titleSwap.innerHTML = "EVIDENCE";
     bodyBox1.innerHTML = "The Earth's climate has changed throughout history. Most of these climate changes are attributed to very small variations in Earth’s orbit that change the amount of solar energy our planet receives.";
-    bodyBox2.innerHTML = 'The current warming trend is of particular significance, because it is human-induced. And proceeding at a rate that is unusual in the past 1,300 years.'
-;
-        document.getElementById('currentStats').innerHTML = 'CURRENT WORLD STATS';
+    bodyBox2.innerHTML = 'The current warming trend is of particular significance, because it is human-induced. And proceeding at a rate that is unusual in the past 1,300 years.';
+    document.getElementById('currentStats').innerHTML = 'CURRENT WORLD STATS';
 
     
     
@@ -367,7 +372,7 @@ function solutions() {
     var bodyBox1 = document.getElementById('textbox1');
     var bodyBox2 = document.getElementById('textbox2');
     var bodyBox3 = document.getElementById('textbox3');
- bodyBox3.innerHTML = 'Feel Free to look around—explore any details you may have missed!'
+    bodyBox3.innerHTML = 'Feel Free to look around—explore any details you may have missed!'
     titleSwap.innerHTML = "SOLUTIONS";
     bodyBox1.innerHTML = 'There are all kinds of renewable resources available to us. The sun, the wind, the ocean—three main regions of renewable energy';
     bodyBox2.innerHTML = 'Burning fossil fuels. Humans have increased atmospheric CO2 concentration by more than a third since the Industrial Revolution began. This is the most important long-lived "forcing" of climate change.'
@@ -382,13 +387,15 @@ function explore() {
     document.getElementById('panel').style.visibility = 'hidden';
 
 }
+
+
 //======================
 //== CAMERA FUNCTIONS ==
 //======================
 
 
 
-function launchFossil() {
+function launchFossil() { //camera moves to fossil fuel island
 
     var pos1 = new TWEEN.Tween(camera.position).to({
         x: 225,
@@ -396,13 +403,20 @@ function launchFossil() {
     }, 2000).easing(TWEEN.Easing.Quadratic.InOut); //ease in and out of tween
     document.getElementById('causesButton').style.visibility= 'hidden';
 
+        var cargoPos = new TWEEN.Tween(cargoShip.position).to({
+            z: -90,
+            x: -104.6
+        }, 32000);
+        cargoPos.start();
+    // console.log(cargoShip);
+    
 
     pos1.start(); //initiates camera tween for position
 
 }
 
 
-function launchCity() {
+function launchCity() { //launch camera function to move in on city.
 
     var pos1 = new TWEEN.Tween(camera.position).to({
         x: 140,
@@ -410,11 +424,16 @@ function launchCity() {
     }, 2000).easing(TWEEN.Easing.Quadratic.InOut); //ease in and out of tween
     pos1.start(); //initiates camera tween for position
 
+    var posCar = new TWEEN.Tween(orangeCar.position).to({
+            z: -95,
+            x: -104.6
+        }, 32000);
+    posCar.start();
 
 
 }
 
-function launchBlank() {
+function launchBlank() { //exact start point before moving in on city
 
     var pos1 = new TWEEN.Tween(camera.position).to({
         x: 0,
@@ -427,7 +446,7 @@ function launchBlank() {
 }
 
 
-function launchAftermath() {
+function launchAftermath() {//camera moves to iceberg melting and sea levels rising.
 
     var pos1 = new TWEEN.Tween(camera.position).to({
         x: 220,
@@ -440,7 +459,7 @@ function launchAftermath() {
 
 }
 
-function launchWind() {
+function launchWind() { //camera moves to energy efficient island.
 
     var pos1 = new TWEEN.Tween(camera.position).to({
         x: 40,
@@ -454,7 +473,7 @@ function launchWind() {
 
 }
 
-function seeDrought() {
+function seeDrought() {//camera moves to farm
        var pos1 = new TWEEN.Tween(camera.position).to({
         x: 70,
         z: -80
